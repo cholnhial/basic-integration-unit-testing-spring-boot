@@ -4,6 +4,7 @@ package dev.chol.unit_testing_services.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import dev.chol.unit_testing_services.dto.OrderRequest;
+import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -30,7 +31,7 @@ public class OrderControllerIT {
 
     @BeforeEach
     void setUp() {
-        baseURI = "http://localhost:" + port;
+        RestAssured.baseURI = "http://localhost:" + port;
     }
     
     @Test
